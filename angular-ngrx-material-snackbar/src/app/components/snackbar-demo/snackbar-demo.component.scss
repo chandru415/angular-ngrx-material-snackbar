@@ -135,6 +135,13 @@ $red: #ff0000; // red
       rgba(57, 57, 57, 0.01) 100%
     ),
     linear-gradient(90deg, hsl(237, 0%, 13%), hsl(237, 0%, 13%));
+
+    label {
+        color: $white;
+        text-align: center;
+        padding: 5%;
+        display: block;
+    }
 }
 
 label {
@@ -174,14 +181,23 @@ label {
   color: $white;
 }
 
-::ng-deep .sanckbar-info,
-.sanckbar-error,
-.sanckbar-success {
-  & button {
-    background-color: $transparent;
-    color: $white;
-    border: 1px solid;
-  }
+::ng-deep .mat-simple-snackbar-action {
+  background-color: $transparent;
+  color: $white !important;
+  border: 1px solid !important;
+  border-radius: 0.25rem;
+}
+
+::ng-deep .mat-simple-snackbar {
+  font-size: 10px;
+}
+
+::ng-deep .mat-button,
+.mat-flat-button,
+.mat-icon-button,
+.mat-stroked-button {
+  font-size: 10px;
+  line-height: 20px !important;
 }
 
 ::ng-deep .sanckbar-error {
@@ -194,3 +210,33 @@ label {
   color: $white;
 }
 /** End of Snack bar styles */
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  color: $white;
+  text-align: center;
+  padding: 2%;
+  opacity: 0.6;
+
+  & a {
+    color: $white;
+  }
+
+  .footer-flex {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    a {
+      padding-top: 2px;
+      margin-right: 5px;
+    }
+
+    p {
+      font-size: 8px;
+    }
+  }
+}

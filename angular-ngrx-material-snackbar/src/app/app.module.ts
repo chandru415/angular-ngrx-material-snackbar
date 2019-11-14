@@ -10,13 +10,20 @@ import { AppEffects } from './store/effects/app.effects';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SnackbarDemoComponent } from './components/snackbar-demo/snackbar-demo.component';
 import { SnackbarEffects } from './store/effects/snackbar.effects';
-import { MatSnackBarModule, MatButtonModule } from '@angular/material';
+import {
+  MatSnackBarModule,
+  MatButtonModule,
+  MatIconModule
+} from '@angular/material';
+import {
+  snackbarFeatureKey,
+  snackbarReducer
+} from './store/reducers/snackbar.reducer';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { environment } from '../environments/environment';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    SnackbarDemoComponent
-  ],
+  declarations: [AppComponent, SnackbarDemoComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
@@ -28,12 +35,18 @@ import { MatSnackBarModule, MatButtonModule } from '@angular/material';
         strictActionImmutability: true
       }
     }),
+    // StoreModule.forFeature(snackbarFeatureKey, snackbarReducer),
     EffectsModule.forRoot([AppEffects]),
     EffectsModule.forFeature([SnackbarEffects]),
+    StoreDevtoolsModule.instrument({
+      maxAge: 25,
+      logOnly: environment.production
+    }),
     MatSnackBarModule,
-    MatButtonModule
+    MatButtonModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

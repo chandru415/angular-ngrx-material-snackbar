@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  snackbarDelayTime: 10000
+  snackbarDelayTime: 3000
 };
 
 /*

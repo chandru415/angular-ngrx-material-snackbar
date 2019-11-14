@@ -4,7 +4,7 @@ import { map, tap, delay } from 'rxjs/operators';
 
 import * as SnackbarActions from '../actions/snackbar.actions';
 import { MatSnackBar } from '@angular/material';
-import { CloseSnackbars } from '../actions/snackbar.actions';
+import { CloseSnackbars, OpenSnackbars } from '../actions/snackbar.actions';
 import { environment } from 'src/environments/environment';
 
 @Injectable()
@@ -29,6 +29,19 @@ export class SnackbarEffects {
       map(() => CloseSnackbars())
     )
   );
+
+  /** This is the example effect - to trigger snackbar from effect
+   *  not related to the main confirguration
+   */
+
+  openSnackbarsFromEffect$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(SnackbarActions.OpenSnackbarsFromEffect),
+      map(action => OpenSnackbars({ config: action.config }))
+    )
+  );
+
+  /** End of example effect */
 
   constructor(private actions$: Actions, private matSnackBar: MatSnackBar) {}
 }

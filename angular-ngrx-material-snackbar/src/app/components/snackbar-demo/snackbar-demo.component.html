@@ -1,5 +1,5 @@
 <div class="main">
-  <label>Angular Material Snackbar - Using NGRX Demo</label>
+  <label style="font-size: 1.5rem;">Angular Material Snackbar - Using NGRX Demo</label>
   <!-- Snackbar buttons -->
   <div class="button-row">
     <button mat-raised-button color="primary" (click)="openSuccess($event)">
@@ -15,7 +15,9 @@
   <!-- End of Snackbar buttons -->
   <!-- Snackbar buttons -->
   <div class="button-row">
-    <button mat-raised-button (click)="openEffect($event)">Via NGRX Effect</button>
+    <button mat-raised-button (click)="openEffect($event)">
+      Via NGRX Effect
+    </button>
   </div>
   <!-- End of Snackbar buttons -->
   <!-- link to the angular material snackbar -->
@@ -29,4 +31,19 @@
     >.</label
   >
   <!-- end link to the angular material snackbar -->
+  <footer class="footer">
+    <div class="footer-flex">
+      <a
+        href="https://github.com/chandru415/angular-ngrx-material-snackbar"
+        target="_blank"
+        title="View Source Code"
+      >
+        <i class="fa fa-github" aria-hidden="true"></i
+      ></a>
+      <p>
+        chandru415 <i class="fa fa-copyright" aria-hidden="true"></i> 2019 -
+        {{ copyright$ | async | date:'yyyy'}} MIT.
+      </p>
+    </div>
+  </footer>
 </div>
