@@ -6,10 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./snackbar-demo.component.scss']
 })
 export class SnackbarDemoComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
+  ngOnInit() {}
 
-  ngOnInit() {
-  }
-
+  openSuccess(event: any) {}
+  openInfo(event: any) {}
+  openError(event: any) {}
+  openEffect(event: any) {}
 }
