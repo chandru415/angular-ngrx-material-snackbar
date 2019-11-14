@@ -1,1 +1,26 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import '~@angular/material/theming';
+
+$hdf-custom-typography: mat-typography-config(
+  $font-family: 'Montserrat, sans-serif'
+);
+
+@include angular-material-typography($hdf-custom-typography);
+/* Resets */
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+}
+
+/* Main styles */
+html,
+body,
+app-root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+}
