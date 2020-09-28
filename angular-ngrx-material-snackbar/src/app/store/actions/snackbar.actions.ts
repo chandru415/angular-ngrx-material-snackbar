@@ -1,5 +1,5 @@
-import { createAction, props } from '@ngrx/store';
 import { MatSnackBarConfig } from '@angular/material/snack-bar';
+import { createAction, props } from '@ngrx/store';
 
 export const OpenSnackbars = createAction(
   '[Snackbar] Open Snackbars',
