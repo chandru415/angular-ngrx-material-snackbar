@@ -129,6 +129,7 @@
   },
   "defaultProject": "angular-ngrx-material-snackbar",
   "cli": {
-    "defaultCollection": "@ngrx/schematics"
+    "defaultCollection": "@ngrx/schematics",
+    "analytics": "f11ad5a6-7fbe-4310-b3e3-40fb76a71924"
   }
 }
