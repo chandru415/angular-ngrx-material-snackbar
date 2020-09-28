@@ -10,11 +10,9 @@ import { AppEffects } from './store/effects/app.effects';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SnackbarDemoComponent } from './components/snackbar-demo/snackbar-demo.component';
 import { SnackbarEffects } from './store/effects/snackbar.effects';
-import {
-  MatSnackBarModule,
-  MatButtonModule,
-  MatIconModule
-} from '@angular/material';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 import {
   snackbarFeatureKey,
   snackbarReducer
